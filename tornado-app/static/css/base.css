@@ -1,0 +1,12 @@
+.errorlist li {
+    color: red;
+}
+
+.navbar {
+    background-color: rgba(200, 150, 100, 70);
+    margin-bottom: 15px;
+}
+
+.navbar .navbar-brand {
+    color: white;
+}

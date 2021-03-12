@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% end %}
+
+{% block content %}
+<div class="container-fluid">
+    <div style="width: 600px; margin: auto;">
+        <h1>Register</h1>
+        <form class="form" method="POST" action="/register">
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Email</label>
+                <input class="col-10" name="email" type="text" placeholder="email@example.com" required>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Name</label>
+                <input class="col-10" name="name" type="text" placeholder="your name" required>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Password</label>
+                <input class="col-10" name="password" type="password" placeholder="" required>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Confirm Password</label>
+                <input class="col-10" name="confirm-password" type="password" placeholder="" required>
+            </div>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+{% end %}

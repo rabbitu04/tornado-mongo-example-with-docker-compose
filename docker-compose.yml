@@ -1,0 +1,28 @@
+version: "3.7"
+
+services: 
+  
+  tornado:
+    build: ./tornado-app
+    container_name: tornado
+    working_dir: /app
+    volumes: 
+      - ./tornado-app:/app
+    links: 
+      - db
+    depends_on:
+      - db
+    ports: 
+      - "80:8080"
+
+  
+  db:
+    image: mongo:latest
+    container_name: db
+    volumes: 
+      - ./mongoDB:/data/db
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: testroot
+      MONGO_INITDB_ROOT_PASSWORD: testpass
+    ports: 
+      - "27017:27017"
