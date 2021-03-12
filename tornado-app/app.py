@@ -83,9 +83,6 @@ class BaseHandler(RequestHandler):
         
         def wrapper(self, *args, **kwargs):
             session_id = self.get_cookie('session_id')
-            print('*' * 5, 'CHECK IF LOGIN', '*' * 5)
-            print('SESSION ID:', session_id)
-            print()
             if db.sessions.find_one({'session_id': session_id}):
                 return func(self, *args, **kwargs)
             self.redirect('/login')
